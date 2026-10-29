@@ -9,7 +9,7 @@ BASE_FLAGS = -Wall -Wextra -pipe -Wno-unused-parameter
 BASE_OPTS  = -O3 -ffast-math $(shell pkg-config --cflags $(PKG))
 LIBS = $(shell pkg-config --libs $(PKG))
 
-# GNU-style ELF options, unrecognized on MacOS
+# Linux options, unrecognized on MacOS
 ifeq ($(shell uname -s),Linux)
 LINK_OPTS  = -Wl,-O1 -Wl,--as-needed -Wl,--strip-all
 LINK_EXTRA = -Wl,--no-undefined
